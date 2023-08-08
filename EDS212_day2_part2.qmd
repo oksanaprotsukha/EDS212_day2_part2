@@ -35,3 +35,38 @@ dfdy
 library(tidyverse)
 library(palmerpenguins)
 ```
+
+## Penguins plot
+
+1.  Define that you are plotting ggplot
+2.  Define the data used for a chart (data.frame)
+3.  Define the parameters
+
+```{r}
+# --- aes is reserved to mapping variable to chart estetics, based on the chart variable.
+# --- if the changes are not based on a variable it should be outside the aes
+
+ggplot(data.frame(penguins), aes(x = body_mass_g, 
+                                 y = flipper_length_mm, 
+                                 color = species)) +
+  geom_point() +
+  labs(x = "Flipper length, mm", 
+       y = "Body mass, g", 
+       title = "Palmer penguins body dimensions")+
+  theme_minimal()
+
+```
+
+```{r}
+# --- aes is reserved to mapping variable to chart estetics, based on the chart variable.
+# --- if the changes are not based on a variable it should be outside the aes
+
+ggplot(data.frame(penguins), aes(x = body_mass_g, 
+                                 y = flipper_length_mm), 
+       color="red") +
+  geom_point() +
+  labs(x = "Flipper length, mm", 
+       y = "Body mass, g", 
+       title = "Palmer penguins body dimensions") +
+  theme_minimal()
+```
